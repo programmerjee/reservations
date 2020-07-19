@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Pool
+{% endblock %}
+
+{% block main %}
+<h1>Book Time in Pool</h1>
+<form action="/pool" method="post">
+    <div class="form-group">
+            <select name="slot">
+            {% for slot in slots %}
+            <option value="{{ slot.slot_id }}">{{ slot.date }}: {{slot.time }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-dark" onclick="openForm()">Book Time</button>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h3>Do you agree?</h3>
+            <input type="checkbox" name="mask" required>
+            <label for="mask"> I agree to wear a mask in the pool area</label><br>
+            <input type="checkbox" name="safety" required>
+            <label for="safety"> I agree to follow posted safety guidelines</label><br>
+            <input type="checkbox" name="sixFeet" required>
+            <label for="sixFeet"> I agree to maintain 6 feet distance from others who are not from my residence</label><br><br>
+            <button type="submit" class="btn">Book Time</button>
+        </form>
+    </div>
+</div>
+</form>
+<script type="text/javascript">
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+</script>
+<img  src="/static/images/trio-pool.jpg" width="400" height="400" alt="Pool"></img>
+{% endblock %}

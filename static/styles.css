@@ -1,0 +1,64 @@
+nav
+{
+    background-image: url("/static/images/pool-blue.jpeg");
+    background-repeat: repeat;
+    background-size: cover;
+    font-size: x-large;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+/* Style "clear" hidden form on reservations page */
+.inline {
+  display: inline;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-button:focus {
+  outline: none;
+}
+.link-button:active {
+  color:red;
+}
+
+/* style Hidden form on Pool Booking page */
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}

@@ -11,6 +11,9 @@ Future versions may include additional features, such as
 
 * Allow additional units to book amenity at the same time (up to X # of reservations)
 
+Application is currently live on Heroku platform:
+https://programmerjee-reservations.herokuapp.com/
+
 ## _Installation_
 
 #### Mac OS:

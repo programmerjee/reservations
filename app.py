@@ -6,8 +6,8 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import Flask, redirect, render_template, request, session, flash
 from flask_session import Session
-from cs50 import SQL
-import psycopg2
+# from cs50 import SQL
+import psycopg
 
 from helpers import apology, login_required
 
@@ -30,7 +30,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-# Configure CS50 Library to use SQLite database
+# Configure database
 DATABASE_URL = os.environ['DATABASE_URL']
 
 db = psycopg2.connect(DATABASE_URL, sslmode='require')

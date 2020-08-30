@@ -37,9 +37,11 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 db = conn.cursor()
 
 #db = SQL("sqlite:///reservations.db")
-today = date.today()
+#today = date.today()
 # Clean up database -- clear out all time slots where date is less than today
-db.execute("DELETE FROM slots WHERE date < :today", today=today)
+db.execute("DELETE FROM slots WHERE date < current_date)
+#SQLite3
+# db.execute("DELETE FROM slots WHERE date < :today", today=today)
 
 @app.route("/pool", methods=["GET", "POST"])
 def book_pool():

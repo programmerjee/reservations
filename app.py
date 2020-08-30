@@ -33,7 +33,8 @@ Session(app)
 # Configure database
 DATABASE_URL = os.environ['DATABASE_URL']
 
-db = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+db = conn.cursor()
 
 #db = SQL("sqlite:///reservations.db")
 today = date.today()
